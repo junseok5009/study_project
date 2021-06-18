@@ -3,6 +3,11 @@
     package="com.hjs.study">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        android:maxSdkVersion="29" /> <!-- > 핸드폰 번호 가져오는 권한 ~ 29 까지< -->
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" /> <!-- > 30이상부터 핸드폰 번호 가져오는 권한< -->
+
 
     <application
         android:allowBackup="true"
@@ -10,14 +15,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_bimo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RxJavaProject">
-        <activity android:name="com.hjs.study.activity.MainKtActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.login.LoginActivity"></activity>
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MainActivity"></activity>
     </application>
 
 </manifest>

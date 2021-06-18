@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#353c73</item>
+        <item name="colorPrimaryDark">#353c73</item>
+        <item name="colorAccent">#353c73</item>
+        <!-- Custom font -->
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        <!--<item name="android:editTextStyle">@style/CustomEditText</item>-->
+
+        <!-- Custom font TextView -->
+        <item name="android:textViewStyle">@style/CustomTextView</item>
+    </style>
+
+    <style name="CustomActionBar" parent="@android:style/Widget.DeviceDefault.ActionBar">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="CustomTextView" parent="@android:style/Widget.DeviceDefault.TextView">
+        <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+</resources>

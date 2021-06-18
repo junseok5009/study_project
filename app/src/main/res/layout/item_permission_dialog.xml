@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:orientation="horizontal"
+        android:id="@+id/item_permission_dialog_cl">
+
+        <TextView
+            android:id="@+id/item_permission_dialog_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:fontFamily="@font/noto_sans_cjk_kr_bold"
+            android:gravity="center"
+            android:padding="4dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/boundary_round_main_main" />
+
+    </RelativeLayout>
+</layout>

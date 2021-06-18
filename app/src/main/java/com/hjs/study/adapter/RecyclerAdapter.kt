@@ -17,7 +17,6 @@ class RecyclerAdapter(var data: LiveData<ArrayList<User>>): RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(data.value!![position])
-
     }
 
     override fun getItemCount(): Int {
