@@ -1,23 +1,13 @@
 package com.hjs.study.fragment.main
 
-import android.app.Activity
 import android.content.Context
-import android.graphics.ColorFilter
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.BlendModeColorFilterCompat
-import androidx.core.graphics.BlendModeCompat
-import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
@@ -36,8 +26,12 @@ import com.hjs.study.fragment.FmMainHome_Market
 
 class FmMainHome : Fragment(){
 
+    // fmmainhome_home 에서 참조하기 위해서 (java의 static이랑 비슷, 자바파일에서 이거 참조하려면 @JvmStatic 이거 붙여야 함)
+    companion object{
+        lateinit var binding: FmMainHomeBinding
+    }
+
     private val ar_tabTitle: Array<String> = arrayOf("홈","AI매매신호","마켓뷰")
-    private lateinit var binding: FmMainHomeBinding
 
 
     init {
@@ -46,6 +40,7 @@ class FmMainHome : Fragment(){
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+
         Log.d(sta_tag, "FmMainHome onAttach()")
     }
 
@@ -60,9 +55,14 @@ class FmMainHome : Fragment(){
         binding = FmMainHomeBinding.inflate(LayoutInflater.from(context), container, false)
 
         binding.fmMainHomeVp.adapter = FmMainHomeVpAdapter( (context as FragmentActivity).supportFragmentManager , lifecycle)
-        binding.fmMainHomeTably.tabMode = TabLayout.MODE_FIXED
-        binding.fmMainHomeTably.tabGravity = TabLayout.GRAVITY_CENTER
-        binding.fmMainHomeTably.isTabIndicatorFullWidth = false
+
+
+        binding.fmMainHomeTably.apply {
+            tabMode = TabLayout.MODE_FIXED
+            tabGravity = TabLayout.GRAVITY_CENTER
+            isTabIndicatorFullWidth = false
+        }
+
         TabLayoutMediator(binding.fmMainHomeTably, binding.fmMainHomeVp){
                 tab: TabLayout.Tab, position: Int ->
 
@@ -109,6 +109,8 @@ class FmMainHome : Fragment(){
 
             }
         })
+
+
 
         //setTabs()
         return binding.root

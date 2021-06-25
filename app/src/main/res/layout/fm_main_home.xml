@@ -8,22 +8,30 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/fm_main_home_appbar_ly"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="80dp"
+                android:minHeight="0dp"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
 
-                <androidx.appcompat.widget.Toolbar
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:title="HJS_STUDY"
-                    app:layout_collapseMode="pin"/>
+                    android:layout_height="80dp"
+                    android:text="HJS_STDUY"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/noto_sans_cjk_kr_bold"
+                    android:gravity="center"
+                    android:textSize="18dp"
+                    android:padding="10dp"
+                    app:layout_collapseMode="parallax"/>
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 

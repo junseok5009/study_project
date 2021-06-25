@@ -1,5 +1,6 @@
 package com.hjs.study.util
 
+import android.content.Context
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -17,6 +18,10 @@ class BindingViewHolder<T : ViewDataBinding>(view: View) : RecyclerView.ViewHold
 
     fun binding(): T {
         return binding
+    }
+
+    fun getBindRootContext(): Context {
+        return binding.root.context
     }
 
 
